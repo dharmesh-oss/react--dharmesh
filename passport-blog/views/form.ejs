@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Blog</title>
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- remixicon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+    integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body class="bg-secondary">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg  shadow-lg" style="background: linear-gradient(135deg, #000000, #060606); border-radius: 10px;">
+      <div class="container-fluid">
+        
+        
+    
+        
+        <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-light fs-5 fw-semibold" href="/" 
+                 style="border-radius: 10px; padding: 5px 15px; transition: 0.3s;">
+                Blogs
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fs-5 fw-semibold" href="/form"
+                 style="border-radius: 10px; padding: 5px 15px; transition: 0.3s;">
+                Add Blog
+              </a>
+            </li>
+            <li><a class="nav-link text-light fs-5 fw-semibold" href="/signup">Signup</a></li>
+              <li><a class="nav-link text-light fs-5 fw-semibold" href="/login">Login</a></li>
+              <li><a class="nav-link text-light fs-5 fw-semibold" href="/logout">Logout</a></li>
+
+          </ul>
+    
+     
+         
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5 d-flex justify-content-center">
+      <div class="card shadow-lg p-4" style="width: 650px; border-radius: 12px; background: linear-gradient(135deg, #f8f9fa, #e3f2fd);">
+        <div class="card-header text-center fs-4 fw-bold text-white" 
+             style="background: linear-gradient(135deg, #ce2020, #000000); border-radius: 10px;">
+          Blog Details
+        </div>
+        <div class="card-body">
+          <form action="/submit" method="post">
+            <!-- Blog Title -->
+            <div class="mb-3">
+              <label for="title" class="form-label fw-semibold">Blog Title:</label>
+              <input type="text" class="form-control rounded-3 p-2" id="title" name="title" placeholder="Tittle of blog">
+            </div>
+    
+            <!-- Image URL -->
+            <div class="mb-3">
+              <label for="url" class="form-label fw-semibold">Image URL:</label>
+              <input type="url" class="form-control rounded-3 p-2" id="url" name="image" placeholder="Blog Image URL">
+            </div>
+    
+            <!-- Blogger Name -->
+            <div class="mb-3">
+              <label for="bname" class="form-label fw-semibold">Blogger Name:</label>
+              <input type="text" class="form-control rounded-3 p-2" id="bname" name="bname" placeholder="Enter Blogger Name">
+            </div>
+    
+            <!-- Blog Category -->
+            <div class="mb-3">
+              <label for="type" class="form-label fw-semibold">Blog Category:</label>
+              <input type="text" class="form-control rounded-3 p-2" id="type" name="type" 
+                     placeholder="Health, Food, Travel, Business, Lifestyle...">
+            </div>
+    
+            <!-- Posted Date -->
+            <div class="mb-3">
+              <label for="date" class="form-label fw-semibold">Date:</label>
+              <input type="date" class="form-control rounded-3 p-2" id="date" name="date">
+            </div>
+    
+            <!-- Description -->
+            <div class="mb-3">
+              <label for="dsc" class="form-label fw-semibold">Description:</label>
+              <textarea name="dsc" id="dsc" class="form-control rounded-3 p-2" placeholder="Write something..." rows="4"></textarea>
+            </div>
+    
+            <!-- Submit Button -->
+            <div class="text-center">
+              <input type="submit" value="Submit" 
+                     class="btn text-white fw-bold px-4 py-2" 
+                     style="background: linear-gradient(135deg, #060aff, #0062ff); border-radius: 30px;">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

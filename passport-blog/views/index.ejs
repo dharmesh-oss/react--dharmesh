@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogs</title>
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- remixicon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+    integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg  shadow-lg" style="background: linear-gradient(135deg, #000000, #000000); border-radius: 10px;">
+      <div class="container-fluid">
+      
+        
+        
+        <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-light fs-5 fw-semibold" href="/" 
+                 style="border-radius: 10px; padding: 5px 15px; transition: 0.3s;">
+                Blogs
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fs-5 fw-semibold" href="/form"
+                 style="border-radius: 10px; padding: 5px 15px; transition: 0.3s;">
+                Add Blog
+              </a>
+            </li>
+            <li><a class="nav-link text-light fs-5 fw-semibold" href="/signup">Signup</a></li>
+              <li><a class="nav-link text-light fs-5 fw-semibold" href="/login">Login</a></li>
+              <li><a class="nav-link text-light fs-5 fw-semibold" href="/logout">Logout</a></li>
+
+          </ul>
+    
+     
+         
+        </div>
+      </div>
+    </nav>
+    
+    
+    
+  </div>
+  
+  <div class="container-fluid">
+    <div class="container mt-3">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <% data.map((val) => { %>
+          <% let {_id, title, image, bname, type, date, dsc} = val; %>
+          <div class="col">
+            <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #ffffff, #747474); border-radius: 5px;">
+              <div class="card-body">
+                <h5 class="card-title fs-3 mb-3 text-primary" style="text-decoration: underline;">
+                  <%= title %>
+                </h5>
+                <img src="<%= image %>" class="card-img-top mb-3 rounded" alt="<%= title %>" style="height: 250px; object-fit: cover;">
+                <p class="card-text"><strong>Blogger Name:</strong> <%= bname %></p>
+                <p class="card-text"><strong>Blog Category:</strong> <%= type %></p>
+                <p class="card-text"><strong>Posted:</strong> <%= date %></p>
+                <p class="card-text"><strong>Description:</strong> <%= dsc %></p>
+                <div class="d-flex justify-content-between mt-3">
+                  <a href="/editData?id=<%= _id %>" class="btn btn-success">Edit</a>
+                  <a href="/deleteData/<%= _id %>" class="btn btn-danger">Delete</a>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
